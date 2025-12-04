@@ -160,7 +160,7 @@ const ChargerDetails = () => {
             </div>
 
             {/* Map Placeholder */}
-            <Card>
+            <Card className="border-0>
               <CardContent className="p-0">
                 <div className="relative h-80 bg-muted rounded-lg flex items-center justify-center">
                   <div className="absolute top-4 right-4 bg-card px-3 py-1.5 rounded-full shadow-md flex items-center gap-2 text-sm">
@@ -186,7 +186,7 @@ const ChargerDetails = () => {
                 Charger Specifications
               </h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Card className="bg-accent/50">
+                <Card className="bg-accent/50 border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <div className="bg-accent/30 p-2 rounded-lg">
@@ -202,7 +202,7 @@ const ChargerDetails = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-secondary/10">
+                <Card className="bg-secondary/10 border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <div className="bg-secondary/20 p-2 rounded-lg">
@@ -220,7 +220,7 @@ const ChargerDetails = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-muted">
+                <Card className="bg-muted border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <div className="bg-background p-2 rounded-lg">
@@ -241,7 +241,7 @@ const ChargerDetails = () => {
             </div>
 
             {/* Perfect Match Info */}
-            <Card className="bg-secondary/5 border-secondary/20">
+            <Card className="bg-secondary/5 border-0">
               <CardContent className="p-6">
                 <div className="flex gap-3">
                   <div className="bg-secondary/20 p-2 rounded-full h-fit">
@@ -267,7 +267,7 @@ const ChargerDetails = () => {
           {/* Right Column - Quick Actions & Info */}
           <div className="space-y-6">
             {/* Quick Actions */}
-            <Card>
+            <Card className="border-0">
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-4">Quick Actions</h3>
                 <div className="space-y-3">
@@ -306,7 +306,7 @@ const ChargerDetails = () => {
             </Card>
 
             {/* Station Rating */}
-            <Card>
+            <Card className="border-0">
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-4">Station Rating</h3>
                 <div className="flex items-center gap-2 mb-2">

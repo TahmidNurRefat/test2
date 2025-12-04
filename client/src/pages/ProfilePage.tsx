@@ -11,12 +11,54 @@ import logo from "../assets/logo.png";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    fullName: "John Anderson",
-    mobileNumber: "+1 (555) 123-4567",
-    email: "john.anderson@gmail.com",
-    evCarName: "Tesla Model 3 Long Range",
-  });
+    // Read raw user data from localStorage (set by login/register)
+  const rawUserData = localStorage.getItem("userData");
+  const googleEmail = localStorage.getItem("google_email");
+
+  // Build initial values for the form
+  let initial = {
+    fullName: "",
+    mobileNumber: "",
+    email: googleEmail || "",
+    evCarName: "",
+  };
+
+  if (rawUserData) {
+    try {
+      const user = JSON.parse(rawUserData);
+
+      // Name: support both shapes (register payload & DB row)
+      initial.fullName = user.fullName || user.name || initial.fullName;
+
+      // Mobile: only in register payload for now
+      initial.mobileNumber = user.mobile || initial.mobileNumber;
+
+      // Email: from register payload, DB, or Google
+      initial.email =
+        user.emailAddress || user.email || initial.email;
+
+      // EV car name:
+      // 1) If we stored selectedCars (array of strings), show them
+      if (Array.isArray(user.selectedCars) && user.selectedCars.length > 0) {
+        initial.evCarName = user.selectedCars.join(", ");
+      }
+      // 2) Or if we have ev_cars from DB (JSON string), show first one
+      else if (user.ev_cars) {
+        try {
+          const cars = JSON.parse(user.ev_cars);
+          if (Array.isArray(cars) && cars.length > 0) {
+            initial.evCarName = String(cars[0]);
+          }
+        } catch {
+          // ignore JSON parse error, keep default
+        }
+      }
+    } catch (e) {
+      console.error("Failed to parse userData from localStorage", e);
+    }
+  }
+
+  const [formData, setFormData] = useState(initial);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));

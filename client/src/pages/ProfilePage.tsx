@@ -50,7 +50,7 @@ const Profile = () => {
             initial.evCarName = String(cars[0]);
           }
         } catch {
-          // ignore JSON parse error, keep default
+          
         }
       }
     } catch (e) {

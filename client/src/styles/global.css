@@ -1,0 +1,149 @@
+/* Google Font MUST come first */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Tailwind directives */
+@import "tailwindcss";
+
+/* Design tokens for Tailwind v4 (used by bg-background, bg-card, text-muted-foreground, etc.) */
+@theme {
+  /* Page + text */
+  --color-background: #f5f5f5;
+  --color-foreground: #212121;
+
+  /* Surfaces */
+  --color-card: #ffffff;
+  --color-card-foreground: #111827;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #111827;
+
+  /* Brand colors */
+  --color-primary: #30c67c;           /* green from your UI */
+  --color-primary-foreground: #ffffff;
+
+  /* Neutral / secondary surfaces */
+  --color-secondary: #e5e7eb;         /* light gray */
+  --color-secondary-foreground: #111827;
+
+  /* Muted sections + subtle text */
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+
+  /* Accent (used in ChargerDetails cards, etc.) */
+  --color-accent: #e0f2fe;            /* soft blue */
+  --color-accent-foreground: #075985; /* dark blue text/icons */
+
+  /* Danger */
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  /* Borders, inputs, focus ring */
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
+  --color-ring: #30c67c;
+
+  /* Extra semantic colors used in your designs */
+  --color-success: #22c55e;           /* bright green for success */
+  --color-warning: #f59e0b;           /* warm orange (temp card) */
+  --color-info: #2979ff;              /* blue for gradients + icons */
+}
+
+/* Custom CSS */
+:root {
+  /* same gradient your Landing button uses */
+  --gradient-green-blue: linear-gradient(90deg, #30c67c 0%, #2979ff 100%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5;
+  color: #212121;
+}
+
+/* keep all your existing styles below (btn-primary, center-text-box, etc.) */
+
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  color: var(--color-dark-gray);
+  fill: none;
+}
+
+.icon-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-md {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-lg {
+  width: 60px;
+  height: 60px;
+}
+
+.btn-primary {
+  background: var(--gradient-green-blue);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background: var(--gradient-green-blue);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.center-text-box {
+  max-width: 600px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
